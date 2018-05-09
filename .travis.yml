@@ -1,0 +1,19 @@
+language: r
+cache: packages
+r:
+  - release
+#  - oldrel
+#  - devel
+
+r_packages:
+  - covr
+  - drat
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
