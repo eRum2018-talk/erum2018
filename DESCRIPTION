@@ -1,7 +1,7 @@
 Package: erum2018
 Type: Package
 Title: A Dummy Package
-Version: 0.1.1
+Version: 0.1.2
 Author: Colin Gillespie
 Maintainer: Colin Gillespie <colin@jumpingrivers.com>
 Description: A dummy package to illustrate travis and friends.
