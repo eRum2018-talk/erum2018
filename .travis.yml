@@ -7,9 +7,9 @@ r:
 
 r_packages:
   - covr
+  - lintr
   - drat
   - RPushbullet
-  - lintr
 
 notifications:
   email:
@@ -21,8 +21,8 @@ after_success:
   - Rscript -e 'lintr::lint_package()'
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
   - Rscript -e 'RPushbullet::pbPost("note",
-                                    "A simple title",
-                                    "Hi",
+                                    "It's alive",
+                                    "This was meant to happen",
                                     apikey = Sys.getenv("PUSHBULLET"),
                                     devices = list("ujBMyrjTBZYsjAiVsKnSTs", "ujBMyrjTBZYsjz7O3P0Jl6"))'
 
